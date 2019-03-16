@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="btntxt"
+            type="dagger.com.myapplication.ButtonTextPojo"/>
+
+
+        <variable
+            name="handlers"
+            type="dagger.com.myapplication.MainActivity.ClickHandler"/>
+
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <EditText android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="username"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <EditText android:id="@+id/tv_password"
+            android:layout_width="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username"
+            android:layout_marginTop="10dp"
+            android:hint="password"
+            android:layout_height="wrap_content"
+            />
+
+        <Button android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_password"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="@{btntxt.btnTxt}"
+            android:onClick="@{handlers::onLoginClick}"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
